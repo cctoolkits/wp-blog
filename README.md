@@ -6,6 +6,7 @@ Installation
 ------------
 
 ### Clone repository
+    git clone https://github.com/cctoolkits/wp-blog
 
 ### Install composer from [here](http://getcomposer.org/ "Composer") or run this command
     curl -s https://getcomposer.org/installer | php
@@ -26,8 +27,12 @@ Installation
     </VirtualHost>
 
 ### Create database
+    mysql -u
 
-### Configure database connection and url parameters in www/wp-config.php
+### Configure database connection and url parameters
+    Create database
+    Modify parameters in www/wp-config.php
+
     define('WP_HOME','http://www.cctoolkits.com/');
     define('WP_SITEURL','http://www.cctoolkits.com/');
 
@@ -37,3 +42,4 @@ Installation
     define('DB_HOST', 'localhost');
 
 ### Import database
+    Import database with db/cctoolkits_com-migrate-*.sql file
