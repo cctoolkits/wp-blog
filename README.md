@@ -14,7 +14,7 @@ Installation
 ### Run composer install
     composer install
 
-### Create Apache VirtualHost
+### Configure Apache VirtualHost
     <VirtualHost *:80>
         ServerName cctoolkits.com
         DocumentRoot "/path/to/cctoolkits/www/"
@@ -25,9 +25,6 @@ Installation
             Allow from all
         </Directory>
     </VirtualHost>
-
-### Create database
-    mysql -u
 
 ### Configure database connection and url parameters
     Create database
