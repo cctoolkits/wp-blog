@@ -20,9 +20,33 @@
 <link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo( 'stylesheet_directory' ); ?>/css/960_12_col.css" />
 
 <?php wp_head(); ?>
+
+<script type="text/javascript">
+  jQuery(function($){
+    jQuery("#back-to-top").hide();
+    
+    jQuery(window).scroll(function () {
+      if (jQuery(this).scrollTop() > 100) {
+        jQuery('#back-to-top').fadeIn();
+      } else {
+        jQuery('#back-to-top').fadeOut();
+      }
+    });
+
+    jQuery('#back-to-top').on('click', function () {
+      jQuery('body,html').animate({ scrollTop: 0 }, 800);
+      return false;
+    });
+
+  });
+
+</script>
+
+
 </head>
 
 <body <?php body_class(); ?>>
+<a href="#" id="back-to-top"></a>
 
 <div id="page-content">
   <div id="header" class="container_12">

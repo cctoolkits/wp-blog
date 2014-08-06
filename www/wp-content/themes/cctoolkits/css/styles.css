@@ -954,3 +954,14 @@ list-style-position: inside;
   text-transform: uppercase;
   color: #666;
 }
+#back-to-top {
+  background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAABf0lEQVRYR+2Wu0oEMRSGdxW0tNLGQhCxsRdLS0WsREHx0q/7CLvFFj6B+AIKKmqpgq2FndhpIdpZWAiCleLtO5DAGjKT5Ay4IrPwk8mZnPxfTjJhq5UO/6od9q+UAEUrMGO28ES7lUUAFjHdMcbLtPsaCC2ANe82ph+0K2gvFUID4JpbTxVEKsASbtvIrtxdcDJECkDIXFWJWIBY83aIVTq7oTMRA5BqngQRAphltiPUE1pJxvs34nPoOCs/D6CfpFvUpzS3ac88jKAn3zx5ANMknHqSXok9oGHn3T39QdTryZkidpYKMErCDepqS7QllQM270x4SF9uRnfLPonJXHepADK+hRoGQkq4huTeP8gAWCAu50ZAZOu+0AZq+swlFjqEMmbI6Ir2xUyUByBDBtAYekTXWeaxAL78EECe5493MRUoAcoK/MkKbEFVc8gkVo8+/mag9isYJ/8C2T8m7zxPoMvfAhCfSbRuDDdpz1PNi1xEGi9vjnYLSoD/U4FvMZxIIYfzOWYAAAAASUVORK5CYII=);
+  display: block;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 32px;
+  height: 32px;
+  z-index: 1000;
+  cursor: pointer;
+}
