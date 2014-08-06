@@ -871,11 +871,26 @@ list-style-position: inside;
   padding: 10px 10px 10px;
   font-size: 13px;
   color: #4E4E4E;
-  margin-bottom: 30px;
+  margin-bottom: 20px;
   -moz-border-radius: 5px;
   -webkit-border-radius: 5px;
   -khtml-border-radius: 5px;
   border-radius: 5px;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  min-height: 270px;
+}
+.grid_5 .events-list li {
+  min-height: 50px;
+}
+.events-list h4 a {
+  font-size: 18px;
+  margin: 0;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: #31839B;
+  line-height: 1em;
 }
 .events-list p {
   font-size: 14px;
@@ -883,8 +898,16 @@ list-style-position: inside;
   clear: left;
 }
 .events-list figure {
-  float: right;
-  margin: 0 0 10px 10px;
+  /*float: right;*/
+  margin: 0 0 10px 0;
+  text-align: center;
+  padding: 10px 0;
+  background-color: #fff;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -khtml-border-radius: 5px;
+  border-radius: 5px;
+
 }
 .events-list h6 {
   font-weight: normal;
@@ -908,11 +931,6 @@ list-style-position: inside;
   font-size: 16px;
   line-height: 36px;
   margin-right: 10px; 
-}
-
-.single-event figure {
-  float: left;
-  margin-right: 10px;
 }
 
 #header {

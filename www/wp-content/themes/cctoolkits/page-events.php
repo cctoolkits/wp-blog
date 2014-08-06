@@ -42,17 +42,29 @@ get_header(); ?>
 
   <div id="primary">
       <div class="container_12">
-          <div class="grid_6 suffix_1">
-
-			<?php while ( have_posts() ) : the_post(); ?>
-
-				<?php get_template_part( 'content', 'page' ); ?>
-
-			<?php endwhile; // end of the loop. ?>
+          <div class="grid_5">
+      			<?php while ( have_posts() ) : the_post(); ?>
+      				<?php get_template_part( 'content', 'page' ); ?>
+      			<?php endwhile; // end of the loop. ?>
           </div>  
 
-          <div class="grid_5">
-            
+          <div class="grid_5 push_2">
+            <a class="twitter-timeline" href="https://twitter.com/hashtag/cctoolkits" data-dnt="true" data-widget-id="489089238999109632">#cctoolkits Tweets</a>
+            <script>
+              // <![CDATA[
+              !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
+              // ]]>
+            </script>
+          </div>
+          <div class="grid_5 push_2">
+            <strong><a href="https://www.flickr.com/search?sort=relevance&amp;text=%23cctoolkits">#cctoolkits</a> on Flickr</strong>
+            <a href="https://www.flickr.com/search?sort=relevance&amp;text=%23cctoolkits">
+              <img class="alignnone size-full wp-image-588" src="http://cctoolkits.com/wp-content/uploads/2013/08/Screenshot-2014-07-14-19.23.58.png" alt="cctoolkits images on flickr" width="450" height="300" />
+            </a>
+          </div>
+
+          <div>
+
             <?php 
               $events = new WP_Query( array( 'post_type' => 'event',  'orderby' => 'date', 'order' => ASC ) );
 
@@ -62,14 +74,14 @@ get_header(); ?>
                 while ( $events->have_posts() ):
                   $events->the_post();
                   $custom = get_post_custom( get_the_ID() );
-                  $custom_img = wp_get_attachment_image_src($custom['cc_affiliate_image'][0], 'thumbnail');
+                  $custom_img = wp_get_attachment_image_src($custom['cc_affiliate_image'][0], 'full');
                 ?>
-                
-                  <li>
-                    <h3>
+                <?php $gridClass = ( $events->current_post == 0 ) ? 'grid_8' : 'grid_4'; ?>
+                  <li class="<?php echo $gridClass; ?>">
+                    <h4>
                       <time><?php echo date('Y , m' , strtotime($custom['date'][0])); ?></time>
                       <a href="<?php echo get_permalink(); ?>"><?php echo get_the_title(); ?></a>
-                    </h3>
+                    </h4>
                     
                     <h6>
                       <figure>
@@ -94,6 +106,7 @@ get_header(); ?>
                 // no posts found
               }
             ?>
+
           </div>
 
 

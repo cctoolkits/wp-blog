@@ -30,7 +30,7 @@ get_header(); ?>
     <div id="content" class="container_12">
         
         <div class="grid_12">
-          <h1><?php the_title(); ?></h1>
+          <h1><?php echo _('Events'); ?></h1>
         </div>
 
     </div>
@@ -40,13 +40,13 @@ get_header(); ?>
       <div class="container_12">
           <div class="grid_6 suffix_1">
 
-			<?php while ( have_posts() ) : the_post(); 
+      <?php while ( have_posts() ) : the_post(); 
             $custom = get_post_custom( get_the_ID() );
-            $custom_img = wp_get_attachment_image_src($custom['cc_affiliate_image'][0]);
-				?>
+            $custom_img = wp_get_attachment_image_src($custom['cc_affiliate_image'][0], 'full');
+        ?>
 
         <div class="entry-content">
-          
+          <h3><?php the_title(); ?></h3>
           <time><?php echo date('Y , m' , strtotime($custom['date'][0])); ?></time>
           <hr>
           <h6>
@@ -66,13 +66,13 @@ get_header(); ?>
         </div><!-- .entry-content -->
 
 
-			<?php endwhile; // end of the loop. ?>
+      <?php endwhile; // end of the loop. ?>
           </div>  
 
           <div class="grid_5">
             
             <?php 
-              $events = new WP_Query( array( 'post_type' => 'event',  'orderby' => 'date', 'order' => ASC ) );
+              $events = new WP_Query( array( 'post_type' => 'event', 'meta_key'=>'date',  'orderby' => 'meta_value', 'order' => DESC ) );
 
               // The Loop
               if ( $events->have_posts() ) {
@@ -80,7 +80,7 @@ get_header(); ?>
                 while ( $events->have_posts() ):
                   $events->the_post();
                   $custom = get_post_custom( get_the_ID() );
-                  $custom_img = wp_get_attachment_image_src($custom['cc_affiliate_image'][0], 'thumbnail');
+                  $custom_img = wp_get_attachment_image_src($custom['cc_affiliate_image'][0], 'full');
                 ?>
                 
                   <li>
