@@ -66,7 +66,7 @@ get_header(); ?>
           <div>
 
             <?php 
-              $events = new WP_Query( array( 'post_type' => 'event',  'orderby' => 'date', 'order' => ASC ) );
+              $events = new WP_Query( array( 'post_type' => 'event', 'meta_key'=>'date',  'orderby' => 'meta_value', 'order' => DESC ) );
 
               // The Loop
               if ( $events->have_posts() ) {

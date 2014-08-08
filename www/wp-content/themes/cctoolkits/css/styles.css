@@ -909,6 +909,9 @@ list-style-position: inside;
   border-radius: 5px;
 
 }
+.events-list figure img {
+  max-height:110px;
+}
 .events-list h6 {
   font-weight: normal;
   margin-bottom: 10px;
